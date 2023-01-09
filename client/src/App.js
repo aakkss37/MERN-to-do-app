@@ -1,4 +1,5 @@
 import './App.css';
+import DisplayTodo from './components/DisplayTodo';
 import Header from './components/Header';
 import TodoForm from './components/TodoForm';
 
@@ -8,7 +9,12 @@ function App () {
 			<div className='appContainer'>
 				<Header />
 			</div>
-			<TodoForm />
+			<div>
+				<TodoForm />
+			</div>
+			<div>
+				<DisplayTodo />
+			</div>
 		</div>
 	);
 }
