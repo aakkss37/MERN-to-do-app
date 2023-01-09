@@ -16,6 +16,7 @@ const DisplayTodo = () => {
 	const todoList = allTodos.map((todo)=>(
 		<TodoList 
 			key={todo._id}
+			id={todo._id}
 			data={todo.data}
 		/>
 	))

@@ -6,9 +6,10 @@ export const addTodo = async(request, responce)=>{
 		const newTodo = await Todo.create({
 			data: request.body.data,
 			createdAt: Date.now(),
+			done: false
 		});
+		// console.log("new Todo entry ------> ",newTodo)
 		await newTodo.save();
-
 		return responce.status(200).json(newTodo);
 	} catch (error) {
 		console.log("error from addtodo controller ----> ", error.message);
@@ -25,3 +26,19 @@ export const fetchAllTodos = async(request, responce)=>{
 		return responce.status(500).json(error.message)
 	}
 }
+
+export const toggleTodo = async(request, responce)=>{
+	try {
+		// console.log("Task to be Toggled -----> ",request.params.id)
+		const responceToBeToggeled = await Todo.findById(request.params.id);
+		const responceAfterToggle = await Todo.findOneAndUpdate(
+			{_id: request.params.id},
+			{ done: !responceToBeToggeled.done}
+		)
+		// console.log("responce after togle --------> ",responceAfterToggle)
+		await responceAfterToggle.save();
+		return responce.status(200).json(responceAfterToggle);
+	} catch (error) {
+		return responce.status(500).json(error.message)
+	}
+} 
