@@ -1,7 +1,7 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import mongoose from 'mongoose'
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import Connection from './database/database.js';
 
 
 const app = express();
@@ -11,6 +11,7 @@ app.use(cors());
 
 
 
+Connection();
 
 
 
