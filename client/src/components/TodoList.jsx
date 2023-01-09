@@ -2,12 +2,12 @@ import React from 'react'
 
 const TodoList = (props) => {
 	return (
-		<li>
+		<li className='task'>
 			<span>{props.data}</span>
-			<span>
+			<span className='icon'>
 				<i className='fas fa-trash'/>
 			</span>
-			<span>
+			<span className='icon'>
 				<i className='fas fa-pen'/>
 			</span>
 		</li>

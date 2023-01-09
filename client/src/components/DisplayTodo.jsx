@@ -22,7 +22,7 @@ const DisplayTodo = () => {
 	// console.log(todoList)
 
 	return (
-		<article>
+		<article className='todoListContainer'>
 			<ul>
 				{todoList}
 			</ul>
