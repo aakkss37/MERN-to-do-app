@@ -15,3 +15,13 @@ export const addTodo = async(request, responce)=>{
 		return responce.status(500).json(error.message);
 	}
 }
+
+
+export const fetchAllTodos = async(request, responce)=>{
+	try {
+		const allTodos = await Todo.find({}).sort({'createdAt': -1});
+		return responce.status(200).json(allTodos);
+	} catch (error) {
+		return responce.status(500).json(error.message)
+	}
+}

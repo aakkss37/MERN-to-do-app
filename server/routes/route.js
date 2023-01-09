@@ -1,7 +1,8 @@
 import express from "express";
-import { addTodo } from "../controller/todo-controller.js";
+import { addTodo, fetchAllTodos } from "../controller/todo-controller.js";
 const route = express.Router()
 
 route.post('/todo', addTodo)
+route.get('/todo', fetchAllTodos)
 
 export default route;

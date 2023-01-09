@@ -16,7 +16,7 @@ const TodoForm = () => {
 	const inputChangeHandler = (e) => {
 		setInput(e.target.value);
 	}
-	console.log(input)
+
 	return (
 		<div>
 			<form className='form' onSubmit={onFormSubmit}>
