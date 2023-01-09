@@ -13,7 +13,7 @@ mongoose.set('strictQuery', false)
 var options = {
 	useNewUrlParser: true, useUnifiedTopology: true
 };
-const Connection = async()=>{
+const mongooseConnection = async()=>{
 	const MONGODB_URL = `mongodb+srv://${USERNAME}:${PASSWORD}@mern-to-do.oro2wus.mongodb.net/?retryWrites=true&w=majority`;
 	mongoose.connect(MONGODB_URL, options);
 	
@@ -27,4 +27,4 @@ const Connection = async()=>{
 };
 
 
-export default Connection;
+export default mongooseConnection;

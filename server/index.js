@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import Connection from './database/database.js';
+import mongooseConnection from './database/database.js';
 import dotenv from 'dotenv'
 import route from './routes/route.js';
 
@@ -13,7 +13,7 @@ app.use(cors());
 
 
 /* Database connection */
-Connection();
+mongooseConnection();
 
 
 /* Route */
