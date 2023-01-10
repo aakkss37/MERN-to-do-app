@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:8000';
 export const addNewTodo = (data) => async (dispatch) => { //---> thid dispatch is comming from thunk
 	try {
 		const responce = await axios.post(`${API_URL}/todo`, { data: data });
-		console.log(" adding new Todo -----> ",responce.data)
+		// console.log(" adding new Todo -----> ",responce.data)
 		dispatch({ type: Add_New_Todo, payload: responce.data })
 	} catch (error) {
 		console.log("Error while calling addTodo API ----> ", error.message)
@@ -29,6 +29,6 @@ export const toggleTodo = (id) => async (dispatch) => {
 		// console.log("Toggle resp -----> ", responce.data)
 		dispatch({ type: Toggle_Todo, payload: responce.data })
 	} catch (error) {
-
+		console.log("Error while calling toggleTodo API ----> ", error.message);
 	}
 }

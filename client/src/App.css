@@ -58,18 +58,36 @@ body {
 
 .task {
 	color: #282c34;
-	border: 2px solid red;
 	background-color: rgb(249, 255, 192);
 	font-weight: 700;
 	font-size: 17px;
 	padding: 12px;
-	margin: 5px;
+	margin: 10px;
 	border-radius: 5px;
 	cursor: pointer;
 	height: fit-content;
+	height: 20px;
+	display: flex;
+	justify-content: space-between;
 }
-.icon{
-	float: right;
+
+.taskDone {
+	text-decoration: line-through;
+	color: #5a647a;
+}
+
+.icon {
 	margin: 5px;
 	margin-left: 20px;
+}
+
+
+.editTodoInput {
+
+	font-size: 15px;
+	color: #0a0e14;
+	background-color: rgb(249, 255, 192);
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #0a0e14;
 }

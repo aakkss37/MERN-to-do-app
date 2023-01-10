@@ -31,11 +31,12 @@ export const toggleTodo = async(request, responce)=>{
 	try {
 		// console.log("Task to be Toggled -----> ",request.params.id)
 		const responceToBeToggeled = await Todo.findById(request.params.id);
+		console.log("before toggle -----> ", responceToBeToggeled);
 		const responceAfterToggle = await Todo.findOneAndUpdate(
 			{_id: request.params.id},
 			{ done: !responceToBeToggeled.done}
 		)
-		// console.log("responce after togle --------> ",responceAfterToggle)
+		console.log("responce after togle --------> ",responceAfterToggle)
 		await responceAfterToggle.save();
 		return responce.status(200).json(responceAfterToggle);
 	} catch (error) {

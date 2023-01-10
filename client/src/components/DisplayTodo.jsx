@@ -12,12 +12,12 @@ const DisplayTodo = () => {
 	
 
 	const allTodos = useSelector(state=> state.todos);
-	// console.log(allTodos);
 	const todoList = allTodos.map((todo)=>(
 		<TodoList 
 			key={todo._id}
 			id={todo._id}
 			data={todo.data}
+			done={todo.done}
 		/>
 	))
 	// console.log(todoList)
