@@ -7,14 +7,16 @@ export const todosReducers = (state = [], action) => {
 			return [action.payload, ...state];
 
 		case dispatchActionType.Get_All_Todo:
-			return action.payload
+			return action.payload;
 
 		case dispatchActionType.Toggle_Todo:
 			// console.log("toggeled data done ------>",action.payload.done);
 			return state.map(todo => (
 				todo._id === action.payload._id ? { ...todo, done: !todo.done } : todo
-			))
+			));
 
+		case dispatchActionType.Update_Todo:
+			return action.payload;
 		
 
 
